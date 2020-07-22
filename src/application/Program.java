@@ -39,6 +39,12 @@ public class Program {
 					captured.add(capturedPiece);
 				}
 				
+				if(chessMatch.getPromoted() != null) {
+					System.out.println("Escolha a peca para ser promovida(Q/R/N/B): ");
+					String type = sc.nextLine();
+					chessMatch.replacePromotedPiece(type);
+				}
+				
 			}
 			catch(ChessException e) {
 				System.out.println(e.getMessage());
