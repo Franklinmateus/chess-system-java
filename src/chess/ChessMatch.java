@@ -96,7 +96,6 @@ public class ChessMatch {
 			if((movedPiece.getColor() == Color.WHITE && target.getRow() == 0) ||
 					(movedPiece.getColor() == Color.BLACK && target.getRow() == 7)) {
 				promoted = (ChessPiece)board.piece(target);
-				//promoted = replacePromotedPiece("Q");
 			}
 		}
 		
@@ -128,7 +127,7 @@ public class ChessMatch {
 			throw new IllegalStateException("Nao a peca a ser promovida!");
 		}
 		if(!type.equals("B") && !type.equals("N") && !type.equals("R") && !type.equals("Q")) {
-			throw new InvalidParameterException("Tipo invalido para promocao.");
+			return promoted;
 		}
 		
 		Position pos = promoted.getChessPosition().toPositio();
